@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container"></div>
+<br>
+<div class="full"></div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<Script>
+$("<form id=1><div> What movie are you choosing? <br/> <input placeholder=movie> </div> What would you rate the movie? <br> <input placeholder=rating> <div> <button type=submit >submit</button> </div> </form>").appendTo(".container");
+$('#1').submit(function(e){
+    e.preventDefault();
+    console.log("working");
+    let value = $("input").eq(0).val()
+    let value2 = $("input").eq(1).val()
+$("<form id =2> <p class=title> </p> <br> <p class=rate > </p> </form>").appendTo(".full")
+ 
+$(".title").text(value).appendTo("#2");
+$('<div> <button id= remove type=submit>remove</button> </div>').appendTo(".title");   
+  $("input").eq(0).val("");
+
+  $(".rate").text(value2).appendTo("#2");
+   $('<div> <button id= remove2 type=submit>remove</button> </div>').appendTo(".rate");
+       $("input").eq(1).val("");
+
+$("#remove").on("click", function() {
+   $(".title" ).remove(); 
+  })
+$("#remove2").on("click", function() {
+   $(".rate" ).remove(); 
+  })
+
+
+})
+</Script>
+</html>
